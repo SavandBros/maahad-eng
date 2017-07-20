@@ -2,9 +2,7 @@
 
 app.controller("ContactController", function ($scope) {
 
-  function constructor() {
-
-  }
-
-  constructor();
+  $scope.send = function (form) {
+    form.loading = true;
+  };
 });
