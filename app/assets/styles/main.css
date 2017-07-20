@@ -1,0 +1,210 @@
+/* Import */
+
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:300,400");
+
+/* Global */
+
+body {
+    font-family: "Ubuntu", sans-serif !important;
+    font-weight: 100;
+}
+
+a {
+    cursor: pointer;
+    transition: 0.1s;
+    text-decoration: none !important;
+}
+
+img {
+    max-width: 100%;
+}
+
+smaller {
+    font-size: smaller;
+}
+
+* {
+    outline: 0 !important;
+}
+
+[ng-click] {
+    cursor: pointer;
+}
+
+[light] {
+    font-weight: lighter;
+}
+
+[lh] {
+    line-height: 1.3em;
+}
+
+[bolder] {
+    font-weight: 600;
+}
+
+hr[big] {
+    margin: 40px 0;
+}
+
+hr[dark] {
+    border-color: rgba(0, 0, 0, 0.4);
+}
+
+hr[devider] {
+    margin: 15px -15px;
+}
+
+
+/* Navbar */
+
+.navbar {
+    background: #fff;
+}
+
+@media (min-width: 768px) {
+    body {
+        margin-top: 70px;
+    }
+    .navbar {
+        height: 70px;
+    }
+    .navbar a {
+        padding-top: 25px !important;
+        padding-bottom: 25px !important;
+    }
+    .navbar .navbar-nav a {
+        border: none;
+        border-bottom: 3px solid transparent;
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-bottom: 22px !important;
+        background: none !important;
+        font-size: 1.1em;
+        letter-spacing: 1px;
+        transition: all 0.2s ease-in-out;
+    }
+    .navbar .navbar-nav a:hover {
+        border-bottom-color: #eee;
+    }
+    .navbar .navbar-nav .active a {
+        border-bottom-color: #337ab7;
+    }
+    .navbar .navbar-nav .highlight a {
+        background: #337ab7 !important;
+        color: #fff;
+        font-weight: 400;
+    }
+    .navbar .navbar-nav .highlight a:hover {
+        background: #ddd !important;
+        border-color: #ddd !important;
+    }
+    .navbar-brand {
+        margin-right: 80px;
+        font-weight: 400;
+    }
+}
+
+
+/* Cover */
+
+.cover {
+    padding: 100px 0;
+    color: #fff;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    box-shadow: inset 0 0 0 10000px rgba(0, 0, 0, 0.7);
+}
+
+
+/* Backgrounds */
+
+.bg-construction {
+    background-image: url("/assets/images/construction.jpg");
+}
+
+.bg-footer {
+    background-image: url("/assets/images/footer.jpg");
+}
+
+
+/* Button */
+
+.btn-outline {
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+}
+
+.btn-outline:hover {
+    color: #000;
+    background: #fff;
+}
+
+.btn-xlg {
+    padding: 20px 30px;
+    font-size: 1.5em;
+    border-radius: 30px;
+}
+
+.btn-xlg .fa {
+    position: relative;
+    top: 1px;
+    margin: 2px 0;
+}
+
+
+/* Container */
+
+.container-dark {
+    color: #aaa;
+}
+
+
+/* Carousel */
+
+.carousel-caption {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 2px #000;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.6);
+    padding: 20px 0;
+    padding-bottom: 50px;
+}
+
+.carousel-indicators {
+    bottom: 10px;
+}
+
+
+/* Product image */
+
+img.product {
+    width: 100%;
+    min-height: 300px;
+    max-height: 300px;
+}
+
+
+/* Contact us */
+
+.contact-us h4 {
+    margin-bottom: 20px;
+}
+
+.contact-us .fa {
+    margin-right: 10px;
+    width: 35px;
+    text-align: center;
+    background: #eee;
+}
+
+.contact-us h4:hover .fa {
+    color: #337ab7;
+}
