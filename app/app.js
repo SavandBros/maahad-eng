@@ -10,7 +10,8 @@ var app = angular.module("alMaahadEng", [
 
 app.run(function ($rootScope) {
   $rootScope.set = {
-    date: new Date()
+    date: new Date(),
+    shop: "https://shop.almaahadeng.com"
   };
 });
 
