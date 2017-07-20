@@ -208,3 +208,17 @@ img.product {
 .contact-us h4:hover .fa {
     color: #337ab7;
 }
+
+
+/* Form control */
+
+.form-control {
+    border-radius: 4px !important;
+    border-width: 2px;
+    box-shadow: none !important;
+    max-width: 100%;
+}
+
+.form-control.ng-invalid.ng-dirty:not(*:focus) {
+    border-color: tomato !important;
+}
