@@ -8,9 +8,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
   })
 
   .state("app.home", {
-    url: "/:element",
+    url: "/",
     controller: "HomeController",
     templateUrl: "components/home/home.html"
+  })
+
+  .state("app.contact", {
+    url: "/contact",
+    controller: "ContactController",
+    templateUrl: "components/contact/contact.html"
   });
 
   $urlRouterProvider.otherwise("/");
