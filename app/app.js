@@ -11,8 +11,10 @@ var app = angular.module("maahadEng", [
 
 app.run(function ($rootScope) {
   $rootScope.set = {
+    /**
+     * @type {Date}
+     */
     date: new Date(),
-    shop: "https://shop.almaahadeng.com"
     /**
      * @type {String}
      */
