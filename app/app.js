@@ -1,11 +1,12 @@
 "use strict";
 
-var app = angular.module("alMaahadEng", [
+var app = angular.module("maahadEng", [
+  "ngMap",
   "ui.router",
   "ui.bootstrap",
   "angular.vertilize",
   "toaster",
-  "ngMap"
+  "LocalStorageModule"
 ]);
 
 app.run(function ($rootScope) {
