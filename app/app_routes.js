@@ -17,6 +17,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     url: "/contact",
     controller: "ContactController",
     templateUrl: "components/contact/contact.html"
+
+  .state("app.admin", {
+    url: "/admin",
+    controller: "AdminController",
+    templateUrl: "components/admin/admin.html",
+    title: "Admin - "
   });
 
   $urlRouterProvider.otherwise("/");
