@@ -194,9 +194,8 @@ module.exports = function (grunt) {
       options: {
         assetsDirs: [
           '<%= yeoman.dist %>',
-          '<%= yeoman.dist %>/assets/images',
-          '<%= yeoman.dist %>/styles',
-          '<%= yeoman.dist %>/assets/data'
+          // '<%= yeoman.dist %>/assets/images',
+          '<%= yeoman.dist %>/styles'
         ],
         patterns: {
           js: [[/(assets\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg|json|ico))/g, 'Replacing references to assets']]
