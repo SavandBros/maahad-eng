@@ -9,7 +9,15 @@ var app = angular.module("maahadEng", [
   "LocalStorageModule"
 ]);
 
-app.run(function ($rootScope) {
+app.config(function ($qProvider, $locationProvider) {
+  $qProvider.errorOnUnhandledRejections(false);
+  $locationProvider.hashPrefix("");
+});
+
+app.run(function ($rootScope, $anchorScroll, $state) {
+  /**
+   * @desc Global settings variable
+   */
   $rootScope.set = {
     /**
      * @type {Date}
