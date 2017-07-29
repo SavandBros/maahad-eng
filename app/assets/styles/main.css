@@ -247,3 +247,12 @@ img.product {
 .form-control.ng-invalid.ng-dirty:not(*:focus) {
     border-color: tomato !important;
 }
+
+
+/* Thumbnail */
+
+.thumbnail.thumbnail-bold {
+    border-width: 3px;
+    border-color: #ddd;
+}
+
