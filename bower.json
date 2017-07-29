@@ -19,7 +19,7 @@
     "bootstrap": {
       "main": [
         "dist/css/bootstrap.min.css",
-        "dist/js/bootstrap.js"
+        "dist/js/bootstrap.min.js"
       ]
     },
     "font-awesome": {
