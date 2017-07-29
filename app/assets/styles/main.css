@@ -256,3 +256,11 @@ img.product {
     border-color: #ddd;
 }
 
+
+/* Tooltip */
+
+.tooltip-inner {
+    min-width: 150px !important;
+}
+
+
