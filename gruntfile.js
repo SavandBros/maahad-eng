@@ -161,7 +161,7 @@ module.exports = function (grunt) {
     filerev: {
       dist: {
         src: [
-          '<%= yeoman.dist %>/assets/**/*.*',
+          '<%= yeoman.dist %>/assets/styles/*.css',
           '<%= yeoman.dist %>/**/*.js',
         ]
       }
