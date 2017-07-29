@@ -2,7 +2,7 @@
   "name": "al-maahad-eng",
   "version": "1.0.0",
   "dependencies": {
-    "angular": "^1.6.4",
+    "angular": "^1.6.5",
     "angular-ui-router": "^0.4.2",
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
@@ -29,6 +29,6 @@
     }
   },
   "resolutions": {
-    "angular": "^1.6.4"
+    "angular": "^1.6.5"
   }
 }
