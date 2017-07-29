@@ -264,3 +264,10 @@ img.product {
 }
 
 
+/* Logo */
+
+.logo {
+    padding: 10px;
+    display: block;
+    margin: 10px 0;
+}
