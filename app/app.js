@@ -21,6 +21,10 @@ app.run(function ($rootScope) {
     $anchorScroll();
   });
 
-app.config(function ($locationProvider) {
-  $locationProvider.hashPrefix("");
+  /**
+   * @desc Update title when state changes
+   */
+  $rootScope.$on("$stateChangeSuccess", function (event, toState) {
+    $rootScope.set.title = toState.title;
+  });
 });
