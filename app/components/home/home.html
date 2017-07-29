@@ -56,10 +56,15 @@
     <!-- Products -->
     <div class="row">
       <div class="col-md-4" ng-repeat="product in products track by $index">
-        <div class="thumbnail">
-          <img ng-src="/assets/images/samples/sample_{{ $index }}.jpg" alt="Ditch Cleaning Bucket" width="100%" class="product">
+        <div class="thumbnail thumbnail-bold">
+          <img ng-src="assets/images/products/{{ $index }}.jpg" alt="Ditch Cleaning Bucket" width="100%" class="product">
           <div class="caption">
-            <h3>Ditch Cleaning Bucket</h3>
+            <h3>
+              {{ product.name }}
+              <i ng-if="product.isSpecial" uib-tooltip="Special Product" tooltip-placement="bottom"
+                class="fa fa-star pull-right text-primary">
+              </i>
+            </h3>
             <p>
               Light-duty bucket, supplied in wide sizes to increase capacity.
               For use in cleaning of ditches and bulk loading of top soil.
