@@ -28,20 +28,18 @@
             </li>
           </ol>
           <!-- Wrapper for slides -->
-          <div class="carousel-inner" role="listbox">
+          <div class="carousel-inner">
             <div class="item" ng-class="{active: $first}" ng-repeat="product in products track by $index">
-              <img ng-src="/assets/images/samples/sample_{{ $index }}.jpg" alt="Ditch Cleaning Bucket" class="product">
-              <div class="carousel-caption">Ditch Cleaning Bucket</div>
+              <img ng-src="{{ product.image }}" alt="{{ product.name }}" class="product">
+              <div class="carousel-caption">{{ product.name }}</div>
             </div>
           </div>
           <!-- Controls -->
-          <a class="left carousel-control" href="#product-car" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-            <span class="sr-only">Previous</span>
+          <a class="left carousel-control" data-target="#product-car" data-slide="prev">
+            <i class="fa fa-chevron-left icon-prev"></i>
           </a>
-          <a class="right carousel-control" href="#product-car" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-            <span class="sr-only">Next</span>
+          <a class="right carousel-control" data-target="#product-car" data-slide="next">
+            <i class="fa fa-chevron-right icon-next"></i>
           </a>
         </div>
       </div>
