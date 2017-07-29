@@ -71,10 +71,10 @@
             </p>
             <hr devider>
             <div class="btn-group">
-              <a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Buy Now</a>
-              <a href="#" class="btn btn-default pull-right"><i class="fa fa-eye"></i> View</a>
+              <a class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Buy Now</a>
+              <a class="btn btn-default pull-right"><i class="fa fa-eye"></i> View</a>
             </div>
-            <h4 class="pull-right text-info"><b>1{{ $index }},000.<smaller>00 AED</smaller></b></h4>
+            <h4 class="pull-right text-info" ng-if="product.price"><b>{{ product.price | number }}.<smaller>00 AED</smaller></b></h4>
           </div>
         </div>
       </div>
