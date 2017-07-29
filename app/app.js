@@ -17,6 +17,10 @@ app.run(function ($rootScope) {
      * @type {String}
      */
     shop: "https://shop.almaahadeng.com",
+    /**
+     * @type {string|null}
+     */
+    title: null
   };
   /**
    * @desc Scroll up on each page view
