@@ -199,7 +199,7 @@ module.exports = function (grunt) {
           '<%= yeoman.dist %>/assets/data'
         ],
         patterns: {
-          js: [[/(assets\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg|json))/g, 'Replacing references to assets']]
+          js: [[/(assets\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg|json|ico))/g, 'Replacing references to assets']]
         },
       }
     },
@@ -235,7 +235,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/assets/images',
-          src: '**/*.{png,jpg,jpeg,gif}',
+          src: '**/*.{png,jpg,jpeg,gif,ico}',
           dest: '<%= yeoman.dist %>/assets/images'
         }]
       }
