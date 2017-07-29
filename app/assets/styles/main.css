@@ -171,6 +171,11 @@ hr[devider] {
     margin: 2px 0;
 }
 
+.btn-long {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
 
 /* Container */
 
