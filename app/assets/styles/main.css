@@ -129,12 +129,20 @@ hr[devider] {
 
 /* Backgrounds */
 
+.bg-no {
+    background: none;
+}
+
 .bg-construction {
-    background-image: url("/assets/images/construction.jpg");
+    background-image: url("http://www.equipmentworld.com/wp-content/uploads/sites/91/2014/03/C10084525.jpeg");
+}
+
+.bg-aboutus {
+    background-image: url("../images/aboutus.jpg");
 }
 
 .bg-footer {
-    background-image: url("/assets/images/footer.jpg");
+    background-image: url("../images/footer.jpg");
 }
 
 
@@ -181,14 +189,22 @@ hr[devider] {
     right: 0;
     bottom: 0;
     margin: 0;
-    background: rgba(0, 0, 0, 0.6);
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.6);
-    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+    padding: 10px 0;
     padding-bottom: 50px;
 }
 
 .carousel-indicators {
     bottom: 10px;
+}
+
+.carousel-control {
+    opacity: 0.8;
+}
+
+.carousel-control .fa {
+    font-size: 2em;
 }
 
 
