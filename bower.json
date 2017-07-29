@@ -14,7 +14,7 @@
     "angular-local-storage": "^0.7.1"
   },
   "appPath": "app",
-  "moduleName": "alMaahadEng",
+  "moduleName": "maahadEng",
   "overrides": {
     "bootstrap": {
       "main": [
