@@ -13,6 +13,10 @@ app.run(function ($rootScope) {
   $rootScope.set = {
     date: new Date(),
     shop: "https://shop.almaahadeng.com"
+    /**
+     * @type {String}
+     */
+    shop: "https://shop.almaahadeng.com",
   };
   /**
    * @desc Scroll up on each page view
