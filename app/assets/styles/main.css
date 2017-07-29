@@ -101,7 +101,7 @@ hr[devider] {
     }
     .navbar-brand {
         margin-right: 80px;
-        font-weight: 400;
+        font-weight: bold;
     }
 }
 
