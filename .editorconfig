@@ -20,3 +20,6 @@ trim_trailing_whitespace = false
 
 [*.css]
 indent_size = 4
+
+[*.php]
+indent_size = 4
