@@ -52,6 +52,10 @@ hr[dark] {
     border-color: rgba(0, 0, 0, 0.4);
 }
 
+hr[light] {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
 hr[devider] {
     margin: 15px -15px;
 }
