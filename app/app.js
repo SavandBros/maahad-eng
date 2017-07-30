@@ -14,7 +14,7 @@ app.config(function ($qProvider, $locationProvider) {
   $locationProvider.hashPrefix("");
 });
 
-app.run(function ($rootScope, $anchorScroll, $state) {
+app.run(function ($rootScope, $anchorScroll) {
   /**
    * @desc Global settings variable
    */
@@ -32,6 +32,7 @@ app.run(function ($rootScope, $anchorScroll, $state) {
      */
     title: null
   };
+
   /**
    * @desc Scroll up on each page view
    */
