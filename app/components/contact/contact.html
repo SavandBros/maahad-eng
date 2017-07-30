@@ -1,50 +1,64 @@
-
+<!-- Cover -->
+<div class="container-fluid cover cover cover-pull bg-construction"></div>
 <!-- Contact Us -->
 <div class="container s-pad-y">
   <div class="row">
-    <div class="col-sm-6">
-      <h4>
-        <span class="text-muted">Address:</span>
-        <span class="pull-right">Industrial Area 13, Sharjah, U.A.E.</span>
-      </h4>
-      <hr>
-      <h4>
-        <span class="text-muted">Company tel:</span>
-        <a class="pull-right" href="telto:+971 65352261">+971 65352261</a>
-      </h4>
-      <hr>
-      <h4>
-        <span class="text-muted">Phone number:</span>
-        <a class="pull-right" href="telto:+971 559380360">+971 559380360</a>
-      </h4>
-      <hr>
-      <h4>
-        <span class="text-muted">E-mail:</span>
-        <a class="pull-right" href="mailto:info@almaahadeng.com">info@almaahadeng.com</a>
-      </h4>
-      <hr>
-      <h4>
-        <span class="text-muted">P.O. Box:</span>
-        <span class="pull-right">69133 - SHARJAH, U.A.E.</span>
-      </h4>
-      <hr>
-      <div class="thumbnail">
-        <iframe width="100%" height="300" frameborder="0" seamless allowfullscreen
-          ng-src="http://www.google.com/maps/embed/v1/place?q=place_id:ChIJBcnbvNpeXz4ROnm9YZspwmQ&key=AIzaSyAWR_qL8M5AG0Woyn0Wv3UG7ddoijITsiU">
-        </iframe>
+    <div class="col-md-6">
+      <div class="infobox infobox-outline infobox-small">
+        <div ng-if="settings">
+          <h4>
+            <span class="text-muted">{{ settings[0].label }}:</span>
+            <span class="pull-right">{{ settings[0].value }}</span>
+          </h4>
+          <hr>
+          <h4>
+            <span class="text-muted">{{ settings[1].label }}:</span>
+            <a class="pull-right" href="telto:{{ settings[1].value }}">{{ settings[1].value }}</a>
+          </h4>
+          <hr>
+          <h4>
+            <span class="text-muted">{{ settings[2].label }}:</span>
+            <a class="pull-right" href="telto:{{ settings[2].value }}">{{ settings[2].value }}</a>
+          </h4>
+          <hr>
+          <h4>
+            <span class="text-muted">{{ settings[3].label }}:</span>
+            <a class="pull-right" href="mailto:{{ settings[3].value }}">{{ settings[3].value }}</a>
+          </h4>
+          <hr>
+          <h4>
+            <span class="text-muted">{{ settings[4].label }}:</span>
+            <span class="pull-right">{{ settings[4].value }}</span>
+          </h4>
+          <hr>
+        </div>
+        <div>
+          <iframe width="100%" height="300" frameborder="0" seamless allowfullscreen
+            ng-src="//www.google.com/maps/embed/v1/place?q=place_id:ChIJBcnbvNpeXz4ROnm9YZspwmQ&key=AIzaSyAWR_qL8M5AG0Woyn0Wv3UG7ddoijITsiU">
+          </iframe>
+        </div>
       </div>
+      <br>
     </div>
-    <div class="col-sm-6">
-      <form name="form" ng-submit="send(form)" class="jumbotron">
+    <div class="col-md-6">
+      <form name="form" ng-submit="send(form)" class="infobox">
+        <!-- Box title -->
         <h2 class="text-primary">Contact Us</h2>
-        <hr big>
+        <hr light>
         <!-- Name -->
         <div class="form-group form-group-lg">
-          <input type="text" class="form-control" minlength="3" placeholder="Name (optional)" ng-model="form.name">
+          <input type="text" class="form-control" minlength="3"
+            placeholder="Name (optional)" ng-model="form.name">
+        </div>
+        <!-- Phone number -->
+        <div class="form-group form-group-lg">
+          <input type="text" class="form-control" minlength="6"
+            placeholder="Phone numer (optional)" ng-model="form.email">
         </div>
         <!-- Email -->
         <div class="form-group form-group-lg">
-          <input type="email" class="form-control" placeholder="Email" ng-model="form.email" required>
+          <input type="email" class="form-control"
+            placeholder="Email" ng-model="form.email" required>
         </div>
         <!-- Message -->
         <div class="form-group form-group-lg">
