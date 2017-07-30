@@ -143,8 +143,12 @@ hr[devider] {
     background: none;
 }
 
+.bg-landing {
+    background-image: url("../images/landing.jpg");
+}
+
 .bg-construction {
-    background-image: url("http://www.equipmentworld.com/wp-content/uploads/sites/91/2014/03/C10084525.jpeg");
+    background-image: url("../images/construction.jpg");
 }
 
 .bg-aboutus {
