@@ -1,6 +1,6 @@
 "use strict";
 
-app.service("API", function ($http, $rootScope, localStorageService) {
+app.service("API", function ($http, $window, $rootScope, localStorageService) {
 
   var service = {};
 
@@ -10,8 +10,16 @@ app.service("API", function ($http, $rootScope, localStorageService) {
 
   var methods = ["post", "get", "put"];
 
+  /**
+   * @desc Get API url based on envirement
+   */
   var getApiUrl = function () {
-    return "http://php/";
+    // Localhost
+    if (window.location.origin.indexOf(":")) {
+      return "//php/api/";
+    }
+    // Production
+    return "/api/";
   };
 
   function getUrlParam(endpoint, params) {
