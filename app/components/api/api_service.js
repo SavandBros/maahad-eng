@@ -4,10 +4,6 @@ app.service("API", function ($http, $window, $rootScope, localStorageService) {
 
   var service = {};
 
-  var endpoints = {
-    settings: "settings"
-  };
-
   var methods = ["post", "get", "put"];
 
   /**
@@ -22,24 +18,6 @@ app.service("API", function ($http, $window, $rootScope, localStorageService) {
     return "/api/";
   };
 
-  function getUrlParam(endpoint, params) {
-    var url = getApiUrl() + endpoint;
-
-    if (endpoint.indexOf(":") !== -1) {
-      angular.forEach(params, function (value, param) {
-        if (endpoint.indexOf(":" + param) !== -1) {
-          params[param] = params[param].replace("/:" + param, "");
-          url = url.replace(":" + param, value);
-        }
-      });
-    }
-
-    return {
-      url: url,
-      param: url.params
-    };
-  }
-
   function getHeaders() {
     var headers = {
       "Accept": "application/json",
@@ -52,14 +30,12 @@ app.service("API", function ($http, $window, $rootScope, localStorageService) {
   }
 
   function http(method, endpoint, payload, params, success, fail) {
-    var urlParam = getUrlParam(endpoints[endpoint], params);
-
     $http({
-      url: urlParam.url,
+      url: getApiUrl() + endpoint,
       headers: getHeaders(),
       method: method,
       data: payload,
-      params: urlParam.params
+      params: params
     }).then(function (data) {
       success(data);
     }, function (data) {
