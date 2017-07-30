@@ -122,6 +122,11 @@ hr[devider] {
     box-shadow: inset 0 0 0 10000px rgba(0, 0, 0, 0.5);
 }
 
+.cover-pull {
+    margin-bottom: -150px;
+    padding: 150px 0;
+}
+
 .cover-dark {
     box-shadow: inset 0 0 0 10000px rgba(0, 0, 0, 0.7);
     text-shadow: 1px 1px 5px #000;
