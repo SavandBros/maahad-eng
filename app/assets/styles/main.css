@@ -125,6 +125,7 @@ hr[devider] {
 .cover-pull {
     margin-bottom: -150px;
     padding: 150px 0;
+    background-position: bottom center !important;
 }
 
 .cover-dark {
