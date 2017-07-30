@@ -290,3 +290,27 @@ img.product {
     display: block;
     margin: 10px 0;
 }
+
+
+/* Infobox */
+
+.infobox {
+    padding: 40px 60px;
+    background: rgba(238, 238, 238, 0.95);
+    border-radius: 6px;
+}
+
+.infobox-small {
+    padding: 20px 30px;
+}
+
+.infobox-outline {
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #eee;
+    box-sizing: content-box;
+}
+
+.infobox h2:first,
+.infobox h4:first {
+    margin-top: 0;
+}
