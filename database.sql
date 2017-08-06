@@ -2,6 +2,8 @@
 -- Note: A user with a database named 'maahad-eng' should be created first.
 -- Version: 2017-07-30
 
+SET time_zone = "+4:00";
+
 CREATE TABLE `settings` (
  `setting` varchar(50) NOT NULL,
  `label` varchar(50) NOT NULL,
