@@ -5,3 +5,4 @@
 /bower_components
 /dist
 /.vscode/settings.json
+api/include/env.ini
