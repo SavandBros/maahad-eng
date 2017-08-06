@@ -8,6 +8,10 @@ if ($method === "GET") {
 
 } else if ($method === "POST") {
 
+    // if (!validate_token("contactus", $_POST)) {
+    //     return;
+    // }
+
     if (require_params(["email", "message"], $_POST)) {
 
         $name = $db->quote($_POST["name"]);
