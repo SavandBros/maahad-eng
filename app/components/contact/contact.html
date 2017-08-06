@@ -66,9 +66,18 @@
           </textarea>
         </div>
         <!-- Send button -->
-        <button class="btn btn-primary btn-lg btn-long" ng-disabled="form.loading || form.$invalid">
+        <button class="btn btn-primary btn-lg btn-long"
+          ng-disabled="form.loading || form.$invalid" ng-if="!form.success">
           <i class="fa fa-fw fa-send"></i> SEND
         </button>
+        <!-- Success -->
+        <div class="alert alert-success" ng-if="form.success">
+          <strong>Done!</strong> Thank you for contacting us, we will contact you soon.
+        </div>
+        <!-- Error -->
+        <div class="alert alert-danger" ng-if="form.error">
+          <strong>Error!</strong> Something went wrong, please try again.
+        </div>
       </form>
     </div>
   </div>
