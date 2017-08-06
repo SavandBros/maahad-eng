@@ -9,9 +9,10 @@ var app = angular.module("maahadEng", [
   "LocalStorageModule"
 ]);
 
-app.config(function ($qProvider, $locationProvider) {
+app.config(function ($qProvider, $locationProvider, $compileProvider) {
   $qProvider.errorOnUnhandledRejections(false);
   $locationProvider.hashPrefix("");
+  $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|telto):/);
 });
 
 app.run(function ($rootScope, $anchorScroll) {
@@ -36,7 +37,7 @@ app.run(function ($rootScope, $anchorScroll) {
   /**
    * @desc Scroll up on each page view
    */
-  $rootScope.$on('$viewContentLoaded', function () {
+  $rootScope.$on("$viewContentLoaded", function () {
     $anchorScroll();
   });
 
