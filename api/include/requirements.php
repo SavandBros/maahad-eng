@@ -1,4 +1,6 @@
 <?php
+// Header
+header("Content-Type: application/json");
 
 // Request method (GET, POST, etc...)
 $method = $_SERVER["REQUEST_METHOD"];
@@ -21,8 +23,8 @@ require "connection.php";
 // Database
 $db = new Db();
 
-// Header
-header("Content-Type: application/json");
+// Amir class
+require "amir.php";
 
 /**
 * Prints the API data with status code
@@ -36,14 +38,14 @@ function response($data, $status=200) {
 }
 
 /**
-* Check if all required params are given
+* Check (and handle) if all required params are given
 *
 * @param array $params Required params
-* @param array $methodVariable Is it GET, POST, etc...
+* @param array $method_variable Is it GET, POST, etc...
 */
-function require_params($params, $methodVariable) {
+function require_params($params, $method_variable) {
     foreach ($params as $param) {
-        if (!isset($methodVariable[$param])) {
+        if (!isset($method_variable[$param])) {
             response([$param => "This field is required"], 400);
             return false;
         }
