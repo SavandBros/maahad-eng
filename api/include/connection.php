@@ -9,9 +9,10 @@ class Db {
     */
     public function connect() {
 
+        global $env;
+
         if (!isset(self::$connection)) {
-            $config = parse_ini_file("config.ini"); 
-            self::$connection = new mysqli($config["host"], $config["username"], $config["password"], $config["database"]);
+            self::$connection = new mysqli($env["host"], $env["username"], $env["password"], $env["database"]);
         }
 
         if (self::$connection === false) {

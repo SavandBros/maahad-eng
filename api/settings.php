@@ -4,17 +4,26 @@ require "include/requirements.php";
 
 if ($method === "GET") {
 
-    response($db->select("SELECT * FROM settings"));
+    $settings = [];
 
-} else if ($method == "POST") {
+    foreach ($db->select("SELECT * FROM settings") as $setting) {
+        $settings[$setting["setting"]] = [
+            "label" => $setting["label"],
+            "value" => $setting["value"],
+        ];
+    }
 
-    if (requireParams(["name", "value", "link"], $_POST)) {
+    response($settings);
 
-        $name = $db->quote($_POST["name"]);
-        $value = $db->quote($_POST["value"]);
-        $link = $db->quote($_POST["link"]);
+} else if ($method === "PUT") {
 
-        $db->query("UPDATE settings SET name=$name, value=$value, link=$link WHERE name=$name");
+    if (require_params(["setting", "label", "value"], $_PUT)) {
+
+        $setting = $db->quote($_PUT["setting"]);
+        $label = $db->quote($_PUT["label"]);
+        $value = $db->quote($_PUT["value"]);
+
+        $db->query("UPDATE settings SET setting=$setting, label=$label, value=$value WHERE setting=$setting");
 
         $code = $db->affected() ? 204 : 404;
         response($db->affected(), $code);
