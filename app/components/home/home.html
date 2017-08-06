@@ -50,8 +50,12 @@
 <!-- Services -->
 <div class="container-fluid bg-1" id="services">
   <div class="container s-pad-y-hard">
-    <!-- Title -->
-    <h1 light class="text-primary text-center t-4">Services &amp; Products</h1>
+    <div class="text-center">
+      <!-- Title -->
+      <h1 light class="text-primary t-4">Services &amp; Products</h1>
+      <!-- Sub title -->
+      <h3 class="text-muted">Help make your machiens more versatile and productive.</h3>
+    </div>
     <hr big>
     <!-- Products -->
     <div class="row">
@@ -128,23 +132,23 @@
         <div class="contact-us">
           <h4>
             <i class="fa fa-border fa-location-arrow"></i>
-            {{ settings[0].value }}
+            {{ settings.address.value }}
           </h4>
           <h4>
             <i class="fa fa-border fa-envelope-o"></i>
-            <a ng-href="telto:{{ settings[1].value }}">{{ settings[1].value }}</a>
+            <a ng-href="mailto:{{ settings.email.value }}">{{ settings.email.value }}</a>
           </h4>
           <h4>
             <i class="fa fa-border fa-phone"></i>
-            <a ng-href="telto:{{ settings[2].value }}">{{ settings[2].value }}</a>
+            <a ng-href="telto:{{ settings.number.value }}">{{ settings.number.value }}</a>
           </h4>
           <h4>
             <i class="fa fa-border fa-phone"></i>
-            <a ng-href="mailto:{{ settings[3].value }}">{{ settings[3].value }}</a>
+            <a ng-href="telto:{{ settings.number2.value }}">{{ settings.number2.value }}</a>
           </h4>
           <h4>
             <i class="fa fa-border fa-inbox"></i>
-            <small>{{ settings[4].label }}:</small> {{ settings[4].value }}
+            <small>{{ settings.pobox.label }}:</small> {{ settings.pobox.value }}
           </h4>
         </div>
         <a ui-sref="app.contact" class="btn btn-success">
