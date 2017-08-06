@@ -31,7 +31,7 @@ app.service("API", function ($http, $window, $rootScope, localStorageService) {
 
   function http(method, endpoint, payload, params, success, fail) {
     $http({
-      url: getApiUrl() + endpoint,
+      url: getApiUrl() + endpoint + "/",
       headers: getHeaders(),
       method: method,
       data: payload,
