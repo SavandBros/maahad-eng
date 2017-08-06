@@ -3,12 +3,15 @@
 // Request method (GET, POST, etc...)
 $method = $_SERVER["REQUEST_METHOD"];
 
+// Get $_POST content
+$_POST = json_decode(file_get_contents("php://input"), true);
+
 // Envirement variables
 $envs = parse_ini_file("env.ini", true);
 $env = $envs["prod"];
 
 // Get current env
-if ($_SERVER['REMOTE_ADDR'] === "127.0.0.1") {
+if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
     $env = $envs["dev"];
 }
 
@@ -41,7 +44,7 @@ function response($data, $status=200) {
 function require_params($params, $methodVariable) {
     foreach ($params as $param) {
         if (!isset($methodVariable[$param])) {
-            response([$param => "This field is required"]);
+            response([$param => "This field is required"], 400);
             return false;
         }
     }
