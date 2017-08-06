@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("ContactController", function (API, $scope) {
+app.controller("ContactController", function (API, $scope, toaster) {
 
   $scope.send = function (form) {
     form.loading = true;
@@ -16,10 +16,10 @@ app.controller("ContactController", function (API, $scope) {
 
     API.post("messages", payload, {}, function () {
       form.loading = false;
-      form.success = true;
+      toaster.success("Thank you", "We will contact you soon!");
     }, function () {
       form.loading = false;
-      form.error = true;
+      toaster.error("Error", "Something went wrong, please try again.");
     });
   };
 });
