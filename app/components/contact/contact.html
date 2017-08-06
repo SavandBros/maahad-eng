@@ -1,41 +1,38 @@
-<!-- Cover -->
 <!-- Contact Us -->
 <div class="container s-pad-y">
   <div class="row">
     <div class="col-md-6">
-      <div class="">
-        <div ng-if="settings">
-          <h4>
-            <span class="text-muted">{{ settings.address.label }}:</span>
-            <span class="pull-right">{{ settings.address.value }}</span>
-          </h4>
-          <hr light>
-          <h4>
-            <span class="text-muted">{{ settings.email.label }}:</span>
-            <a class="pull-right" href="mailto:{{ settings.email.value }}">{{ settings.email.value }}</a>
-          </h4>
-          <hr light>
-          <h4>
-            <span class="text-muted">{{ settings.number.label }}:</span>
-            <a class="pull-right" href="telto:{{ settings.number.value }}">{{ settings.number.value }}</a>
-          </h4>
-          <hr light>
-          <h4>
-            <span class="text-muted">{{ settings.number2.label }}:</span>
-            <a class="pull-right" href="telto:{{ settings.number2.value }}">{{ settings.number2.value }}</a>
-          </h4>
-          <hr light>
-          <h4>
-            <span class="text-muted">{{ settings.pobox.label }}:</span>
-            <span class="pull-right">{{ settings.pobox.value }}</span>
-          </h4>
-          <hr light>
-        </div>
-        <div>
-          <iframe width="100%" height="300" frameborder="0" seamless allowfullscreen
-            ng-src="//www.google.com/maps/embed/v1/place?q=place_id:ChIJBcnbvNpeXz4ROnm9YZspwmQ&key=AIzaSyAWR_qL8M5AG0Woyn0Wv3UG7ddoijITsiU">
-          </iframe>
-        </div>
+      <div ng-if="settings">
+        <h4>
+          <span class="text-muted">{{ settings.address.label }}:</span>
+          <span class="pull-right">{{ settings.address.value }}</span>
+        </h4>
+        <hr light>
+        <h4>
+          <span class="text-muted">{{ settings.email.label }}:</span>
+          <a class="pull-right" href="mailto:{{ settings.email.value }}">{{ settings.email.value }}</a>
+        </h4>
+        <hr light>
+        <h4>
+          <span class="text-muted">{{ settings.number.label }}:</span>
+          <a class="pull-right" href="telto:{{ settings.number.value }}">{{ settings.number.value }}</a>
+        </h4>
+        <hr light>
+        <h4>
+          <span class="text-muted">{{ settings.number2.label }}:</span>
+          <a class="pull-right" href="telto:{{ settings.number2.value }}">{{ settings.number2.value }}</a>
+        </h4>
+        <hr light>
+        <h4>
+          <span class="text-muted">{{ settings.pobox.label }}:</span>
+          <span class="pull-right">{{ settings.pobox.value }}</span>
+        </h4>
+        <hr light>
+      </div>
+      <div>
+        <iframe width="100%" height="300" frameborder="0" seamless allowfullscreen
+          ng-src="//www.google.com/maps/embed/v1/place?q=place_id:ChIJBcnbvNpeXz4ROnm9YZspwmQ&key=AIzaSyAWR_qL8M5AG0Woyn0Wv3UG7ddoijITsiU">
+        </iframe>
       </div>
       <br>
     </div>
@@ -66,18 +63,10 @@
           </textarea>
         </div>
         <!-- Send button -->
-        <button class="btn btn-primary btn-lg btn-long"
-          ng-disabled="form.loading || form.$invalid" ng-if="!form.success">
-          <i class="fa fa-fw fa-send"></i> SEND
+        <button class="btn btn-primary btn-lg btn-long" ng-disabled="form.loading || form.$invalid || form.success">
+          <span ng-if="!form.success"><i class="fa fa-fw fa-send"></i> SEND</span>
+          <span ng-if="form.success"><i class="fa fa-fw fa-check"></i></span>
         </button>
-        <!-- Success -->
-        <div class="alert alert-success" ng-if="form.success">
-          <strong>Done!</strong> Thank you for contacting us, we will contact you soon.
-        </div>
-        <!-- Error -->
-        <div class="alert alert-danger" ng-if="form.error">
-          <strong>Error!</strong> Something went wrong, please try again.
-        </div>
       </form>
     </div>
   </div>
