@@ -334,9 +334,11 @@ module.exports = function (grunt) {
         }, {
           // Copy .htaccess
           expand: true,
-          cwd: '.',
-          src: '.htaccess',
-          dest: '<%= yeoman.dist %>'
+          cwd: ".",
+          src: [
+            ".htaccess"
+          ],
+          dest: "<%= yeoman.dist %>"
         }]
       },
       styles: {
