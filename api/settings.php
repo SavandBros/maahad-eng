@@ -6,6 +6,7 @@ if ($method === "GET") {
 
     $settings = [];
 
+    // Turn list to an object, keys are settings
     foreach ($db->select("SELECT * FROM settings") as $setting) {
         $settings[$setting["setting"]] = [
             "label" => $setting["label"],
