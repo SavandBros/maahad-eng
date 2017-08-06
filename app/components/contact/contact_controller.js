@@ -4,6 +4,8 @@ app.controller("ContactController", function (API, $scope) {
 
   $scope.send = function (form) {
     form.loading = true;
+    form.error = false;
+    form.success = false;
 
     var payload = {
       name: form.name || "",
