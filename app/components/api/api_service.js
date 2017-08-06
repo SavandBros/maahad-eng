@@ -11,7 +11,7 @@ app.service("API", function ($http, $window, $rootScope, localStorageService) {
    */
   var getApiUrl = function () {
     // Localhost
-    if (window.location.origin.indexOf(":")) {
+    if (window.location.origin.indexOf(":9000") !== -1) {
       return "//php/api/";
     }
     // Production
