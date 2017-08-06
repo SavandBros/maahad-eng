@@ -52,3 +52,15 @@ function require_params($params, $method_variable) {
     }
     return true;
 }
+
+/**
+* Check (and handle) if the correct session code is passed
+*
+* @param string $name Session code name
+* @param array $method_variable Is it GET, POST, etc...
+*/
+function validate_token($name, $method_variable) {
+    if (!empty($method_variable["token"]) OR !Amir::is_valid_session_code($name, $method_variable["token"])) {
+        response(["error" => "Something went wrong, try again later."], 400);
+    }
+}
