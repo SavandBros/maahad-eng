@@ -4,7 +4,7 @@ require "include/requirements.php";
 
 if ($method === "GET") {
 
-    response($db->select("SELECT * FROM messages LIMIT 100"));
+    response($db->select("SELECT * FROM messages ORDER BY id DESC LIMIT 100"));
 
 } else if ($method === "POST") {
 
