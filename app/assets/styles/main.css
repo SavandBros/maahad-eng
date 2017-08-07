@@ -315,3 +315,16 @@ img.product {
 .infobox h4:first {
     margin-top: 0;
 }
+
+
+/* List group */
+
+.list-group-item {
+    text-transform: capitalize;
+    font-size: larger;
+    border-radius: 0 !important;
+}
+
+.list-group-item .fa.pull-right {
+    margin-top: 4px;
+}
