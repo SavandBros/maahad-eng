@@ -311,8 +311,10 @@ img.product {
     box-sizing: content-box;
 }
 
-.infobox h2:first,
-.infobox h4:first {
+.infobox h1:first-of-type,
+.infobox h2:first-of-type,
+.infobox h3:first-of-type,
+.infobox h4:first-of-type {
     margin-top: 0;
 }
 
