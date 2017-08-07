@@ -38,6 +38,10 @@
 
 /* Backgrounds */
 
+.bg-white {
+    background: #fff;
+}
+
 .bg-1 {
     background: #f0f0f0;
 }
