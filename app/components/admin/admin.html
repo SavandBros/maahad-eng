@@ -47,6 +47,20 @@
         </div>
       </div>
 
+      <!-- Authenticate -->
+      <div ng-if="currentSection === 'authenticate'">
+        <div class="infobox">
+          <!-- Title -->
+          <h2 class="text-primary">Authenticate:</h2>
+          <hr light>
+          <!-- Input -->
+          <form ng-submit="setAuthentication(form.code)" name="form">
+            <div class="form-group">
+              <input type="password" class="form-control input-lg" required
+                placeholder="Enter authentication code" ng-model="form.code">
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
