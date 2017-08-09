@@ -44,7 +44,7 @@ function response($data, $status=200) {
 * Check (and handle) if all required params are given
 *
 * @param array $params Required params
-* @param array $method_variable Is it GET, POST, etc...
+* @param array $method_variable
 */
 function require_params($params, $method_variable) {
     foreach ($params as $param) {
@@ -57,10 +57,9 @@ function require_params($params, $method_variable) {
 }
 
 /**
-* Check (and handle) if the correct session code is passed
+* Check (and handle) if hidden input is filled
 *
-* @param string $name Session code name
-* @param array $method_variable Is it GET, POST, etc...
+* @param array $method_variable
 */
 function validate_token($name, $method_variable) {
     if (!empty($method_variable["token"]) OR !Amir::is_valid_session_code($name, $method_variable["token"])) {
