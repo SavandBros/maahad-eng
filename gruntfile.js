@@ -329,7 +329,10 @@ module.exports = function (grunt) {
           // Copy API
           expand: true,
           cwd: 'api',
-          src: '**/*.*',
+          src: [
+            '**/*.*',
+            '**/.htaccess'
+          ],
           dest: '<%= yeoman.dist %>/api'
         }, {
           // Copy .htaccess
