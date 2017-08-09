@@ -4,7 +4,11 @@ require "include/requirements.php";
 
 if ($method === "GET") {
 
-    response($db->select("SELECT * FROM messages ORDER BY id DESC LIMIT 100"));
+    if (!validate_authentication()) {
+        return;
+    }
+
+    response($db->select("SELECT * FROM messages ORDER BY id DESC LIMIT 200"));
 
 } else if ($method === "POST") {
 
