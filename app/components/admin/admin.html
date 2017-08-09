@@ -14,27 +14,34 @@
     <!-- Section -->
     <div class="col-md-9">
 
-      <!-- Messages table -->
-      <table class="table table-hover bg-white" ng-if="currentSection === 'messages'">
-        <thead>
-          <tr>
-            <th class="text-center">#</th>
-            <th>Email</th>
-            <th>Name</th>
-            <th>Number</th>
-            <th>Message</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="message in messages">
-            <th class="text-center">{{ message.id }}</th>
-            <td><a ng-href="mailto:{{ message.email }}">{{ message.email }}</a></td>
-            <td>{{ message.name }}</td>
-            <td><a ng-href="telto:{{ message.number }}">{{ message.number }}</a></td>
-            <td>{{ message.message }}</td>
-          </tr>
-        </tbody>
-      </table>
+      <!-- Messages -->
+      <div ng-if="currentSection === 'messages'">
+        <!-- Messages table -->
+        <table class="table table-hover bg-white" ng-if="messages">
+          <thead>
+            <tr>
+              <th class="text-center">#</th>
+              <th>Email</th>
+              <th>Name</th>
+              <th>Number</th>
+              <th>Message</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="message in messages">
+              <th class="text-center">{{ message.id }}</th>
+              <td><a ng-href="mailto:{{ message.email }}">{{ message.email }}</a></td>
+              <td>{{ message.name }}</td>
+              <td><a ng-href="telto:{{ message.number }}">{{ message.number }}</a></td>
+              <td title="{{ message.message }}">{{ message.message | limitTo:30 }}...</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- No message -->
+        <div ng-if="!messages">
+          <h3 class="text-center text-muted">No message...</h3>
+        </div>
+      </div>
 
       <!-- Information -->
       <div ng-if="currentSection === 'information'">
@@ -42,8 +49,24 @@
           <!-- Title -->
           <h2 class="text-primary">Information:</h2>
           <hr light>
-          <!-- Sub title -->
-          <h4>Coming soon...</h4>
+          <!-- Settings -->
+          <div ng-if="settings">
+            <form ng-submit="updateInformation(settings)">
+              <div class="row form-group" ng-repeat="(key, setting) in settings">
+                <div class="col-md-2">
+                  <p style="margin-top: 10px;">{{ key | uppercase }}:</p>
+                </div>
+                <div class="col-md-4">
+                  <input type="text" ng-model="setting.label" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" ng-model="setting.value" class="form-control" required>
+                </div>
+              </div>
+              <hr light>
+              <button class="btn btn-primary btn-block btn-lg"><i class="fa fa-save fa-fw"></i> Save Changes</button>
+            </form>
+          </div>
         </div>
       </div>
 
