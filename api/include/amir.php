@@ -5,18 +5,6 @@
 */
 class Amir {
 
-    // Generate session code to use for forms
-    public static function generate_session_code($name) {
-        $code = bin2hex(mcrypt_create_iv(32, MCRYPT_DEV_URANDOM));
-        $_SESSION[$name] = $code;
-        return $code;
-    }
-
-    // Check if it's a valid session code
-    public static function is_valid_session_code($name, $code) {
-        return hash_equals($_SESSION[$name], $code);
-    }
-
     // Get time since via date
     public static function get_time_since($time) {
 
