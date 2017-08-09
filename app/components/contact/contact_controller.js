@@ -11,7 +11,8 @@ app.controller("ContactController", function (API, $scope, toaster) {
       name: form.name || "",
       number: form.number || "",
       email: form.email,
-      message: form.message
+      message: form.message,
+      hidden: form.hidden
     };
 
     API.post("messages", payload, {}, function () {

@@ -62,6 +62,8 @@
             ng-model="form.message" rows="8" required minlength="10">
           </textarea>
         </div>
+        <!-- Hidden input -->
+        <input ng-model="form.hidden" type="hidden">
         <!-- Send button -->
         <button class="btn btn-primary btn-lg btn-long" ng-disabled="form.loading || form.$invalid || form.success">
           <span ng-if="!form.success"><i class="fa fa-fw fa-send"></i> SEND</span>
