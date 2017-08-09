@@ -5,6 +5,9 @@ header("Content-Type: application/json");
 // Request method (GET, POST, etc...)
 $method = $_SERVER["REQUEST_METHOD"];
 
+// Request headers
+$headers = apache_request_headers();
+
 // Get $_POST content
 $_POST = json_decode(file_get_contents("php://input"), true);
 
