@@ -16,17 +16,20 @@ if ($method === "GET") {
 
     response($settings);
 
-} else if ($method === "PUT") {
+} else if ($method === "POST") {
 
-    if (require_params(["setting", "label", "value"], $_PUT)) {
+    if (!validate_authentication()) {
+        return;
+    }
 
-        $setting = $db->quote($_PUT["setting"]);
-        $label = $db->quote($_PUT["label"]);
-        $value = $db->quote($_PUT["value"]);
+    if (require_params(["setting", "label", "value"], $_POST)) {
+
+        $setting = $db->quote($_POST["setting"]);
+        $label = $db->quote($_POST["label"]);
+        $value = $db->quote($_POST["value"]);
 
         $db->query("UPDATE settings SET setting=$setting, label=$label, value=$value WHERE setting=$setting");
 
-        $code = $db->affected() ? 204 : 404;
-        response($db->affected(), $code);
+        response($db->affected(), 202);
     }
 }
