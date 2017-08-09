@@ -61,8 +61,12 @@ function require_params($params, $method_variable) {
 *
 * @param array $method_variable
 */
-function validate_token($name, $method_variable) {
-    if (!empty($method_variable["token"]) OR !Amir::is_valid_session_code($name, $method_variable["token"])) {
+function validate_hidden($method_variable) {
+    if (isset($method_variable["hidden"])) {
         response(["error" => "Something went wrong, try again later."], 400);
+        return false;
     }
+    return true;
+}
+
 }
