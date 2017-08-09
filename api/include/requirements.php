@@ -69,4 +69,15 @@ function validate_hidden($method_variable) {
     return true;
 }
 
+/**
+* Check (and handle) for authentication
+*/
+function validate_authentication() {
+    global $headers, $env;
+
+    if ($headers["Authorization"] != $env["authentication"]) {
+        response(["error" => "You're not authorised to access this page."], 401);
+        return false;
+    }
+    return true;
 }
