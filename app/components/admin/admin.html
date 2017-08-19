@@ -47,7 +47,8 @@
       <div ng-if="currentSection === 'products'">
         <div ng-if="products">
           <form ng-submit="updateProducts(products)">
-            <div class="infobox infobox-xsmall form-group row row-small" ng-repeat="product in products">
+            <div class="infobox infobox-xsmall form-group row row-small"
+              ng-repeat="product in products | orderBy:'ordering'">
               <!-- Name -->
               <div class="col-md-3">
                 <input class="form-control" type="text" ng-model="product.name" placeholder="Name" required>
