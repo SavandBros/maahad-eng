@@ -17,7 +17,7 @@ app.controller("AdminController", function ($scope, API, localStorageService, to
      * @desc Product ordering
      * @type {array}
      */
-    $scope.orderings = new Array(9);
+    $scope.orderings = new Array(11);
   }
 
   /**
