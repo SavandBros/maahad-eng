@@ -71,7 +71,7 @@
               <!-- Ordering -->
               <div class="col-md-2">
                 <select class="form-control" ng-model="product.ordering">
-                  <option ng-value="'{{ $index }}'" ng-repeat="order in orderings track by $index">{{ $index }}</option>
+                  <option ng-value="{{ $index }}" ng-repeat="order in orderings track by $index">{{ $index }}</option>
                 </select>
               </div>
               <!-- Image preview -->
