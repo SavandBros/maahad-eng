@@ -2,7 +2,7 @@
   <div class="row s-mar-top-soft">
 
     <!-- Sidebar (section list) -->
-    <div class="col-md-3">
+    <div class="col-lg-2">
       <div class="list-group">
         <a class="list-group-item" ng-repeat="section in sections"
           ng-click="activateSection(section)" ng-class="{active: currentSection === section}">
@@ -12,7 +12,7 @@
     </div>
 
     <!-- Section -->
-    <div class="col-md-9">
+    <div class="col-lg-10">
 
       <!-- Messages -->
       <div ng-if="currentSection === 'messages'">
@@ -50,7 +50,7 @@
             <div class="infobox infobox-xsmall form-group row row-small"
               ng-repeat="product in products | orderBy:'ordering'">
               <!-- Name -->
-              <div class="col-md-3">
+              <div class="col-md-2">
                 <input class="form-control" type="text" ng-model="product.name" placeholder="Name" required>
               </div>
               <!-- Price -->
@@ -58,8 +58,12 @@
                 <input class="form-control" type="number" ng-model="product.price" placeholder="Price" min="0">
               </div>
               <!-- Image URL -->
-              <div class="col-md-3">
+              <div class="col-md-2">
                 <input class="form-control" type="text" ng-model="product.image" placeholder="Image URL">
+              </div>
+              <!-- Link URL -->
+              <div class="col-md-2">
+                <input class="form-control" type="text" ng-model="product.link" placeholder="Link URL">
               </div>
               <!-- Is special -->
               <div class="col-md-2">
