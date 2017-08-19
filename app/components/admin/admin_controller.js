@@ -73,6 +73,16 @@ app.controller("AdminController", function ($scope, API, localStorageService, to
     });
   };
 
+  $scope.updateProducts = function (products) {
+    angular.forEach(products, function (product) {
+      API.post("products", product, {}, function (data) {
+        if (data.data === 1) {
+          toaster.info("", product.name + " updated!");
+        }
+      });
+    });
+  };
+
   $scope.activateSection = function (section) {
     if (!$scope.getAuthentication()) {
       $scope.currentSection = "authenticate";
