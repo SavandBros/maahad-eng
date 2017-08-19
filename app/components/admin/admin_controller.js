@@ -43,6 +43,11 @@ app.controller("AdminController", function ($scope, API, localStorageService, to
     $scope.loading = true;
     API.get("products", {}, {}, function (data) {
       $scope.products = data.data;
+      // Parse values
+      angular.forEach($scope.products, function (product) {
+        product.price = parseInt(product.price);
+        product.ordering = parseInt(product.ordering);
+      });
     }, handleError);
   }
 
