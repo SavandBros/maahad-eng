@@ -31,4 +31,4 @@ CREATE TABLE `products` (
  `ordering` int(11) NOT NULL,
  `link` varchar(1000) NOT NULL,
  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
