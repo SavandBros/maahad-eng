@@ -6,12 +6,18 @@ app.controller("AdminController", function ($scope, API, localStorageService, to
     /**
      * @desc Sections of admin page
      */
-    $scope.sections = ["messages", "information", "authenticate"];
+    $scope.sections = ["messages", "products", "information", "authenticate"];
 
     /**
      * @desc Current selected section
      */
     $scope.activateSection("messages");
+
+    /**
+     * @desc Product ordering
+     * @type {array}
+     */
+    $scope.orderings = new Array(9);
   }
 
   /**
@@ -30,6 +36,13 @@ app.controller("AdminController", function ($scope, API, localStorageService, to
     $scope.loading = true;
     API.get("messages", {}, {}, function (data) {
       $scope.messages = data.data;
+    }, handleError);
+  }
+
+  function getProducts() {
+    $scope.loading = true;
+    API.get("products", {}, {}, function (data) {
+      $scope.products = data.data;
     }, handleError);
   }
 
@@ -65,6 +78,8 @@ app.controller("AdminController", function ($scope, API, localStorageService, to
 
     if (section === "messages") {
       getMessages();
+    } else if (section === "products") {
+      getProducts();
     } else if (section === "information") {
       getInformation();
     }
