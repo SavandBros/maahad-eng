@@ -43,6 +43,53 @@
         </div>
       </div>
 
+      <!-- Products -->
+      <div ng-if="currentSection === 'products'">
+        <div ng-if="products">
+          <form ng-submit="updateProducts(products)">
+            <div class="infobox infobox-xsmall form-group row row-small" ng-repeat="product in products">
+              <!-- Name -->
+              <div class="col-md-3">
+                <input class="form-control" type="text" ng-model="product.name" placeholder="Name" required>
+              </div>
+              <!-- Price -->
+              <div class="col-md-2">
+                <input class="form-control" type="text" ng-model="product.price" placeholder="Price" min="0">
+              </div>
+              <!-- Image URL -->
+              <div class="col-md-4">
+                <input class="form-control" type="text" ng-model="product.image" placeholder="Image URL">
+              </div>
+              <!-- Is special -->
+              <div class="col-md-2">
+                <select class="form-control" ng-model="product.is_special">
+                  <option ng-value="'1'">Special</option>
+                  <option ng-value="'0'">Normal</option>
+                </select>
+              </div>
+              <!-- Ordering -->
+              <div class="col-md-1">
+                <select class="form-control" ng-model="product.ordering">
+                  <option ng-value="'{{ $index }}'" ng-repeat="order in orderings track by $index">{{ $index }}</option>
+                </select>
+              </div>
+              <!-- Image preview -->
+              <div class="col-md-2 s-mar-top-tiny">
+                <div class="thumbnail s-mar-no">
+                  <img ng-src="{{ product.image }}" alt="Product image" style="height: 86px">
+                </div>
+              </div>
+              <!-- Detail -->
+              <div class="col-md-10 s-mar-top-tiny">
+                <textarea class="form-control" ng-model="product.detail" placeholder="Detail" rows="4"></textarea>
+              </div>
+            </div>
+            <!-- Update button -->
+            <button class="btn btn-primary btn-block btn-lg"><i class="fa fa-save fa-fw"></i> Save Changes</button>
+          </form>
+        </div>
+      </div>
+
       <!-- Information -->
       <div ng-if="currentSection === 'information'">
         <div class="infobox">
@@ -85,6 +132,8 @@
           </form>
         </div>
       </div>
+
+      <br>
     </div>
   </div>
 </div>
