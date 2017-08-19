@@ -1,6 +1,6 @@
 -- Database structure setup.
--- Note: A user with a database named 'maahad-eng' should be created first.
--- Version: 2017-07-30
+-- Note: A user with a database should be created first.
+-- Version: 2017-08-19
 
 SET time_zone = "+4:00";
 
