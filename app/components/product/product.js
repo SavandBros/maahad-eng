@@ -4,22 +4,31 @@
  * @desc Product class
  */
 app.service("Product", function () {
-  return function (name, image, isSpecial, price) {
+  return function (data) {
+
     /**
      * @type {string}
      */
-    this.name = name;
+    this.name = data.name;
+
     /**
      * @type {string}
      */
-    this.image = image;
+    this.detail = data.detail;
+
     /**
-     * @type {boolean}
+     * @type {string}
      */
-    this.isSpecial = isSpecial;
+    this.image = data.image;
+
     /**
      * @type {number}
      */
-    this.price = price;
+    this.price = parseInt(data.price);
+
+    /**
+     * @type {boolean}
+     */
+    this.isSpecial = data.is_special === "1";
   };
 });
