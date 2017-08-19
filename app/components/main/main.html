@@ -23,6 +23,9 @@
         <li ui-sref-active="active">
           <a ui-sref="app.contact">Contact Us</a>
         </li>
+        <li ui-sref-active="active" ng-if="isAdmin">
+          <a ui-sref="app.admin">Admin</a>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="highlight">
