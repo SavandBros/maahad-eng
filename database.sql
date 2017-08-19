@@ -20,3 +20,15 @@ CREATE TABLE `messages` (
  `message` text NOT NULL,
  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+CREATE TABLE `products` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `name` varchar(100) NOT NULL,
+ `detail` text NOT NULL,
+ `image` varchar(200) NOT NULL,
+ `price` int(11) NOT NULL DEFAULT '0',
+ `is_special` tinyint(1) NOT NULL DEFAULT '0',
+ `ordering` int(11) NOT NULL,
+ `link` varchar(1000) NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1
