@@ -31,7 +31,7 @@ app.run(function ($rootScope, $anchorScroll) {
     /**
      * @type {string|null}
      */
-    title: null
+    title: ""
   };
 
   /**
