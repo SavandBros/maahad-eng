@@ -58,7 +58,7 @@
                 <input class="form-control" type="number" ng-model="product.price" placeholder="Price" min="0">
               </div>
               <!-- Image URL -->
-              <div class="col-md-4">
+              <div class="col-md-3">
                 <input class="form-control" type="text" ng-model="product.image" placeholder="Image URL">
               </div>
               <!-- Is special -->
@@ -69,7 +69,7 @@
                 </select>
               </div>
               <!-- Ordering -->
-              <div class="col-md-1">
+              <div class="col-md-2">
                 <select class="form-control" ng-model="product.ordering">
                   <option ng-value="'{{ $index }}'" ng-repeat="order in orderings track by $index">{{ $index }}</option>
                 </select>
