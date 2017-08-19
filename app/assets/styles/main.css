@@ -305,6 +305,10 @@ img.product {
     padding: 20px 30px;
 }
 
+.infobox-xsmall {
+    padding: 10px;
+}
+
 .infobox-outline {
     background: rgba(255, 255, 255, 0.95);
     border: 2px solid #eee;
@@ -348,4 +352,11 @@ img.product {
 
 .table tbody th {
     font-weight: normal;
+}
+
+/* Small row */
+
+.row-small > div {
+    padding-right: 5px;
+    padding-left: 5px;
 }
