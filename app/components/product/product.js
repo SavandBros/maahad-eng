@@ -27,6 +27,11 @@ app.service("Product", function () {
     this.price = parseInt(data.price);
 
     /**
+     * @type {string}
+     */
+    this.link = data.link;
+
+    /**
      * @type {boolean}
      */
     this.isSpecial = data.is_special === "1";
