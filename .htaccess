@@ -5,4 +5,4 @@ RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.*?)/?$ /$1.php [NC,END]
 
 RewriteCond %{SERVER_PORT} 80
-RewriteRule ^(.*)$ https://www.almaahadeng.com/$1 [R,L]
+RewriteRule ^(.*)$ https://almaahadeng.com/$1 [R,L]
