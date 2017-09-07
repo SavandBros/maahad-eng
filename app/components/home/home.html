@@ -76,7 +76,7 @@
               <a ng-href="{{ product.link }}" class="btn btn-default pull-right"><i class="fa fa-eye"></i> View</a>
             </div>
             <h4 class="pull-right text-info" ng-if="product.price">
-              <b>{{ product.price | number }}.<smaller>00 $</smaller></b>
+              <b>${{ product.price | number }}.<smaller>00</smaller></b>
             </h4>
           </div>
         </div>
