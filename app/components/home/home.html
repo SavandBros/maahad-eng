@@ -23,7 +23,7 @@
         <br>
       </div>
       <!-- Products -->
-      <div class="col-md-5">
+      <div class="col-md-5" ng-if="products.length">
         <div id="product-car" class="carousel slide thumbnail" data-ride="carousel" style="background: none">
           <!-- Indicators -->
           <ol class="carousel-indicators">
@@ -63,7 +63,7 @@
     <hr big>
     <!-- Products -->
     <div class="row" vertilize-container>
-      <div class="col-md-4" ng-repeat="product in products track by $index">
+      <div class="col-md-4" ng-repeat="product in products track by $index" ng-if="products.length">
         <div class="thumbnail thumbnail-bold">
           <img ng-src="{{ product.image }}" alt="Ditch Cleaning Bucket" width="100%" class="product">
           <div class="caption">
@@ -145,7 +145,7 @@
 </div>
 
 <!-- Contact Us -->
-<div class="container-fluid bg-1" id="contact">
+<div class="container-fluid bg-1" id="contact" ng-if="settings">
   <div class="container s-pad-y">
     <div class="row">
       <div class="col-sm-6">
