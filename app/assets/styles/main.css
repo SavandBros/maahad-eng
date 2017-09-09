@@ -86,6 +86,7 @@ hr[devider] {
         padding-bottom: 22px !important;
         background: none !important;
         font-size: 1.1em;
+        font-weight: 400;
         letter-spacing: 1px;
         transition: all 0.2s ease-in-out;
     }
@@ -354,9 +355,10 @@ img.product {
     font-weight: normal;
 }
 
+
 /* Small row */
 
-.row-small > div {
+.row-small>div {
     padding-right: 5px;
     padding-left: 5px;
 }
