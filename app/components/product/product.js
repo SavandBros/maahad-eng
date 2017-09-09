@@ -22,11 +22,6 @@ app.service("Product", function () {
     this.image = data.image;
 
     /**
-     * @type {number}
-     */
-    this.price = parseInt(data.price);
-
-    /**
      * @type {string}
      */
     this.link = data.link;
