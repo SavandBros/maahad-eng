@@ -29,6 +29,7 @@
             <th>Name</th>
             <th>Number</th>
             <th>Message</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -37,7 +38,22 @@
             <td><a ng-href="mailto:{{ message.email }}">{{ message.email }}</a></td>
             <td>{{ message.name }}</td>
             <td><a ng-href="telto:{{ message.number }}">{{ message.number }}</a></td>
-            <td title="{{ message.message }}">{{ message.message | limitTo:30 }}...</td>
+            <td>{{ message.message | limitTo:30 }}...</td>
+            <td>
+              <div class="btn-group">
+                <button class="btn btn-xs btn-default" title="Mark as Read"
+                  ng-if="message.is_read == false" ng-click="markMessage(message, true)">
+                  <i class="fa fa-fw fa-check"></i>
+                </button>
+                <button class="btn btn-xs btn-default" title="Mark as Unread"
+                  ng-if="message.is_read == true" ng-click="markMessage(message, false)">
+                  <i class="fa fa-fw fa-reply"></i>
+                </button>
+                <button class="btn btn-xs btn-default" ng-click="openMessage(message)" title="Open message">
+                  <i class="fa fa-fw fa-arrow-right"></i>
+                </button>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>
