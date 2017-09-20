@@ -10,6 +10,16 @@
   <div class="s-mar-top-soft">
     <!-- Messages -->
     <div ng-if="currentSection === 'messages'">
+      <!-- Messages tab -->
+      <ul class="nav nav-tabs">
+        <li class="nav-item" ng-class="{active: !listingReadMessages}" ng-click="getMessages(false)">
+          <a class="nav-link"><i class="fa fa-fw fa-inbox"></i> Inbox</a>
+        </li>
+        <li class="nav-item" ng-class="{active: listingReadMessages}" ng-click="getMessages(true)">
+          <a class="nav-link"><i class="fa fa-fw fa-eye-slash"></i> Read</a>
+        </li>
+      </ul>
+      <br>
       <!-- Messages table -->
       <table class="table table-hover bg-white" ng-if="messages">
         <thead>
