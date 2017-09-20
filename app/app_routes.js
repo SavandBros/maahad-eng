@@ -25,6 +25,14 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     controller: "AdminController",
     templateUrl: "components/admin/admin.html",
     title: "Admin - "
+  })
+
+  .state("app.inquiry", {
+    url: "/inquiry/:product/:productLink",
+    controller: "InquiryController",
+    templateUrl: "components/inquiry/inquiry.html",
+    title: "Inquiry Now - ",
+    noNavbar: true
   });
 
   $urlRouterProvider.otherwise("/");
