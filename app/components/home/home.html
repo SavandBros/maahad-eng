@@ -53,14 +53,39 @@
 
 <!-- Services -->
 <div class="container-fluid bg-1" id="services">
-  <div class="container s-pad-y-hard animated fadeInUp">
+  <div class="container s-pad-y animated fadeInUp">
     <div class="text-center">
       <!-- Title -->
       <h1 light class="text-primary t-4">Services &amp; Products</h1>
       <!-- Sub title -->
       <h3>Help make your machiens more versatile and productive.</h3>
     </div>
-    <hr big>
+    <!-- Devider -->
+    <div class="col-xs-12">
+      <hr light>
+    </div>
+    <!-- Categories -->
+    <div class="row">
+      <div class="col-md-4">
+        <a class="btn btn-highlight btn-default btn-lg btn-block" ng-href="{{ settings.excavators.value }}">
+          <i class="fa fa-chevron-right"></i> <b>Excavator</b> Products
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a class="btn btn-highlight btn-default btn-lg btn-block" ng-href="{{ settings.wheelloaders.value }}">
+          <i class="fa fa-chevron-right"></i> <b>Wheel Loader</b> Products
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a class="btn btn-highlight btn-default btn-lg btn-block" ng-href="{{ settings.cranes.value }}">
+          <i class="fa fa-chevron-right"></i> <b>Crane</b> Products
+        </a>
+      </div>
+    </div>
+    <!-- Devider -->
+    <div class="col-xs-12">
+      <br>
+    </div>
     <!-- Products -->
     <div class="row" vertilize-container>
       <div class="col-md-4" ng-repeat="product in products track by $index" ng-if="products.length">
@@ -79,30 +104,6 @@
             <a ng-href="{{ product.link }}" class="btn btn-default pull-right"><i class="fa fa-eye"></i> View</a>
           </div>
         </div>
-      </div>
-      <!-- Devider -->
-      <div class="col-xs-12">
-        <hr light>
-      </div>
-      <!-- Other products -->
-      <div class="col-md-4">
-        <a class="btn btn-highlight btn-default btn-lg btn-block" ng-href="{{ settings.excavators.value }}">
-          <i class="fa fa-chevron-right"></i> <b>Excavator</b> Products
-        </a>
-      </div>
-      <div class="col-md-4">
-        <a class="btn btn-highlight btn-default btn-lg btn-block" ng-href="{{ settings.wheelloaders.value }}">
-          <i class="fa fa-chevron-right"></i> <b>Wheel Loader</b> Products
-        </a>
-      </div>
-      <div class="col-md-4">
-        <a class="btn btn-highlight btn-default btn-lg btn-block" ng-href="{{ settings.cranes.value }}">
-          <i class="fa fa-chevron-right"></i> <b>Crane</b> Products
-        </a>
-      </div>
-      <!-- Devider -->
-      <div class="col-xs-12">
-        <hr light>
       </div>
     </div>
     <!-- View more -->
