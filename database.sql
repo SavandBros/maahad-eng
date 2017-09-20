@@ -13,11 +13,14 @@ CREATE TABLE `settings` (
 
 CREATE TABLE `messages` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
- `date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
  `name` varchar(50) NOT NULL,
  `number` varchar(50) NOT NULL,
  `email` varchar(200) NOT NULL,
  `message` text NOT NULL,
+ `product_name` varchar(50) NOT NULL,
+ `product_link` varchar(200) NOT NULL,
+ `is_read` tinyint(1) NOT NULL DEFAULT '0',
  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 
