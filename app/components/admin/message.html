@@ -1,0 +1,13 @@
+<div class="modal-header">
+  <h4 class="modal-title">
+    <small>From</small> <b>{{ viewMessage.name || viewMessage.email }}</b>
+    <br>
+    <small>On {{ viewMessage.date }}</small>
+  </h4>
+</div>
+<div class="modal-body">
+  <p class="ws-pre">{{ viewMessage.message }}</p>
+</div>
+<div class="modal-footer">
+  <a class="btn btn-primary" ng-href="mailto:{{ viewMessage.email }}">Reply</a>
+</div>
