@@ -30,4 +30,17 @@ if ($method === "GET") {
         $code = $db->affected() ? 201 : 400;
         response($db->affected(), $code);
     }
+
+} else if ($method === "PUT") {
+
+    if (require_params(["id", "is_read"], $_PUT)) {
+
+        $id = $db->quote($_PUT["id"]);
+        $is_read = $db->quote_bool($_PUT["is_read"]);
+
+        $db->query("UPDATE messages SET is_read=$is_read WHERE id=$id");
+
+        $code = $db->affected() > 0 ? 200 : 400;
+        response($db->affected(), $code);
+    }
 }
