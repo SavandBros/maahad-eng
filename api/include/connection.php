@@ -65,6 +65,14 @@ class Db {
     }
 
     /**
+    * @param string $value The value to be quoted and escaped (to boolean)
+    * @return boolean The quoted and escaped string (to boolean)
+    */
+    public function quote_bool($value) {
+        return $value == "true" ? "true" : "false";
+    }
+
+    /**
     * @return number Number of affected rows
     */
     public function affected() {
