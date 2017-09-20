@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("AdminController", function ($scope, API, localStorageService, toaster) {
+app.controller("AdminController", function ($scope, $uibModal, API, localStorageService, toaster) {
 
   function constructor() {
     /**
@@ -18,6 +18,12 @@ app.controller("AdminController", function ($scope, API, localStorageService, to
      * @type {array}
      */
     $scope.orderings = new Array(11);
+
+    /**
+     * @desc Message listing
+     * @type {boolean}
+     */
+    $scope.listingReadMessages = false;
   }
 
   /**
@@ -32,12 +38,16 @@ app.controller("AdminController", function ($scope, API, localStorageService, to
     }
   }
 
-  function getMessages() {
+  $scope.getMessages = function (read) {
+    read = read || false;
+
+    $scope.listingReadMessages = read;
     $scope.loading = true;
-    API.get("messages", {}, {}, function (data) {
+
+    API.get("messages", {}, { is_read: read }, function (data) {
       $scope.messages = data.data;
     }, handleError);
-  }
+  };
 
   function getProducts() {
     $scope.loading = true;
@@ -92,12 +102,29 @@ app.controller("AdminController", function ($scope, API, localStorageService, to
     $scope.currentSection = section;
 
     if (section === "messages") {
-      getMessages();
+      $scope.getMessages();
     } else if (section === "products") {
       getProducts();
     } else if (section === "information") {
       getInformation();
     }
+  };
+
+  $scope.openMessage = function (message) {
+    $scope.viewMessage = message;
+    $uibModal.open({
+      templateUrl: 'components/admin/message.html',
+      scope: $scope
+    });
+  };
+
+  $scope.markMessage = function (message, is_read) {
+    API.put("messages", { is_read: is_read, id: message.id }, {},
+      function () {
+        message.is_read = is_read;
+        $scope.getMessages($scope.listingReadMessages);
+      }
+    );
   };
 
   $scope.setAuthentication = function (authentication) {
