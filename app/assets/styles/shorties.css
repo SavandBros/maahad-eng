@@ -1,5 +1,9 @@
 /* Spaces */
 
+.s-pad-soft {
+    padding: 25px;
+}
+
 .s-pad-no {
     padding: 0;
 }
@@ -22,6 +26,15 @@
 
 .s-mar-top-hard {
     margin-top: 100px;
+}
+
+.s-mar-top-no {
+    margin-top: 0;
+}
+
+.s-mar-x-no {
+    margin-right: 0;
+    margin-left: 0;
 }
 
 .s-pad-y {

@@ -192,6 +192,11 @@ hr[devider] {
     padding-left: 30px;
 }
 
+.btn-longer {
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
 .btn-highlight {
     border-width: 4px;
     margin: 8px 0;
@@ -222,6 +227,16 @@ hr[devider] {
 
 .container-shadow {
     box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.container-no-navbar {
+    margin-top: -50px;
+}
+
+@media (min-width: 768px) {
+    .container-no-navbar {
+        margin-top: -70px;
+    }
 }
 
 
@@ -386,4 +401,15 @@ img.product {
 .row-small>div {
     padding-right: 5px;
     padding-left: 5px;
+}
+
+
+/* Nav justified */
+
+.nav-justified>li>a {
+    text-transform: capitalize;
+    border-radius: 0;
+    color: #555;
+    font-weight: bold;
+    font-size: large;
 }
