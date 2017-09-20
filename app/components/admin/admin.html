@@ -1,140 +1,129 @@
-<div class="container">
-  <div class="row s-mar-top-soft">
+<div class="container s-pad-y-soft">
+  <!-- Admin sections -->
+  <ul class="nav nav-pills nav-justified thumbnail">
+    <li ng-repeat="section in sections" ng-class="{active: currentSection === section}">
+      <a ng-click="activateSection(section)">{{ section }}</a>
+    </li>
+  </ul>
 
-    <!-- Sidebar (section list) -->
-    <div class="col-lg-2">
-      <div class="list-group">
-        <a class="list-group-item" ng-repeat="section in sections"
-          ng-click="activateSection(section)" ng-class="{active: currentSection === section}">
-          {{ section }} <i class="fa fa-chevron-right pull-right"></i>
-        </a>
+  <!-- Section -->
+  <div class="s-mar-top-soft">
+    <!-- Messages -->
+    <div ng-if="currentSection === 'messages'">
+      <!-- Messages table -->
+      <table class="table table-hover bg-white" ng-if="messages">
+        <thead>
+          <tr>
+            <th class="text-center">#</th>
+            <th>Email</th>
+            <th>Name</th>
+            <th>Number</th>
+            <th>Message</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="message in messages">
+            <th class="text-center">{{ message.id }}</th>
+            <td><a ng-href="mailto:{{ message.email }}">{{ message.email }}</a></td>
+            <td>{{ message.name }}</td>
+            <td><a ng-href="telto:{{ message.number }}">{{ message.number }}</a></td>
+            <td title="{{ message.message }}">{{ message.message | limitTo:30 }}...</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- No message -->
+      <div ng-if="!messages">
+        <h3 class="text-center text-muted">No message...</h3>
       </div>
     </div>
 
-    <!-- Section -->
-    <div class="col-lg-10">
-
-      <!-- Messages -->
-      <div ng-if="currentSection === 'messages'">
-        <!-- Messages table -->
-        <table class="table table-hover bg-white" ng-if="messages">
-          <thead>
-            <tr>
-              <th class="text-center">#</th>
-              <th>Email</th>
-              <th>Name</th>
-              <th>Number</th>
-              <th>Message</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr ng-repeat="message in messages">
-              <th class="text-center">{{ message.id }}</th>
-              <td><a ng-href="mailto:{{ message.email }}">{{ message.email }}</a></td>
-              <td>{{ message.name }}</td>
-              <td><a ng-href="telto:{{ message.number }}">{{ message.number }}</a></td>
-              <td title="{{ message.message }}">{{ message.message | limitTo:30 }}...</td>
-            </tr>
-          </tbody>
-        </table>
-        <!-- No message -->
-        <div ng-if="!messages">
-          <h3 class="text-center text-muted">No message...</h3>
+    <!-- Products -->
+    <div ng-if="currentSection === 'products' && products">
+      <form ng-submit="updateProducts(products)">
+        <div class="infobox infobox-xsmall form-group row s-mar-x-no"
+          ng-repeat="product in products | orderBy:'ordering'">
+          <!-- Name -->
+          <div class="col-md-2">
+            <input class="form-control" type="text" ng-model="product.name" placeholder="Name" required>
+          </div>
+          <!-- Image URL -->
+          <div class="col-md-3">
+            <input class="form-control" type="text" ng-model="product.image" placeholder="Image URL">
+          </div>
+          <!-- Link URL -->
+          <div class="col-md-3">
+            <input class="form-control" type="text" ng-model="product.link" placeholder="Link URL">
+          </div>
+          <!-- Is special -->
+          <div class="col-md-2">
+            <select class="form-control" ng-model="product.is_special">
+              <option ng-value="'1'">Special</option>
+              <option ng-value="'0'">Normal</option>
+            </select>
+          </div>
+          <!-- Ordering -->
+          <div class="col-md-2">
+            <select class="form-control" ng-model="product.ordering">
+              <option ng-value="{{ $index }}" ng-repeat="order in orderings track by $index">{{ $index }}</option>
+            </select>
+          </div>
+          <!-- Image preview -->
+          <div class="col-md-2 s-mar-top-tiny">
+            <div class="thumbnail s-mar-no">
+              <img ng-src="{{ product.image }}" alt="Product image" style="height: 86px">
+            </div>
+          </div>
+          <!-- Detail -->
+          <div class="col-md-10 s-mar-top-tiny">
+            <textarea class="form-control" ng-model="product.detail" placeholder="Detail" rows="4"></textarea>
+          </div>
         </div>
-      </div>
+        <!-- Update button -->
+        <button class="btn btn-primary btn-block btn-lg"><i class="fa fa-save fa-fw"></i> Save Changes</button>
+      </form>
+    </div>
 
-      <!-- Products -->
-      <div ng-if="currentSection === 'products'">
-        <div ng-if="products">
-          <form ng-submit="updateProducts(products)">
-            <div class="infobox infobox-xsmall form-group row row-small"
-              ng-repeat="product in products | orderBy:'ordering'">
-              <!-- Name -->
+    <!-- Information -->
+    <div ng-if="currentSection === 'information'">
+      <div class="infobox">
+        <!-- Title -->
+        <h2 class="text-primary">Information:</h2>
+        <hr light>
+        <!-- Settings -->
+        <div ng-if="settings">
+          <form ng-submit="updateInformation(settings)">
+            <div class="row form-group" ng-repeat="(key, setting) in settings">
               <div class="col-md-2">
-                <input class="form-control" type="text" ng-model="product.name" placeholder="Name" required>
+                <p style="margin-top: 10px;">{{ key | uppercase }}:</p>
               </div>
-              <!-- Image URL -->
-              <div class="col-md-3">
-                <input class="form-control" type="text" ng-model="product.image" placeholder="Image URL">
+              <div class="col-md-4">
+                <input type="text" ng-model="setting.label" class="form-control" required>
               </div>
-              <!-- Link URL -->
-              <div class="col-md-3">
-                <input class="form-control" type="text" ng-model="product.link" placeholder="Link URL">
-              </div>
-              <!-- Is special -->
-              <div class="col-md-2">
-                <select class="form-control" ng-model="product.is_special">
-                  <option ng-value="'1'">Special</option>
-                  <option ng-value="'0'">Normal</option>
-                </select>
-              </div>
-              <!-- Ordering -->
-              <div class="col-md-2">
-                <select class="form-control" ng-model="product.ordering">
-                  <option ng-value="{{ $index }}" ng-repeat="order in orderings track by $index">{{ $index }}</option>
-                </select>
-              </div>
-              <!-- Image preview -->
-              <div class="col-md-2 s-mar-top-tiny">
-                <div class="thumbnail s-mar-no">
-                  <img ng-src="{{ product.image }}" alt="Product image" style="height: 86px">
-                </div>
-              </div>
-              <!-- Detail -->
-              <div class="col-md-10 s-mar-top-tiny">
-                <textarea class="form-control" ng-model="product.detail" placeholder="Detail" rows="4"></textarea>
+              <div class="col-md-6">
+                <input type="text" ng-model="setting.value" class="form-control" required>
               </div>
             </div>
-            <!-- Update button -->
+            <hr light>
             <button class="btn btn-primary btn-block btn-lg"><i class="fa fa-save fa-fw"></i> Save Changes</button>
           </form>
         </div>
       </div>
+    </div>
 
-      <!-- Information -->
-      <div ng-if="currentSection === 'information'">
-        <div class="infobox">
-          <!-- Title -->
-          <h2 class="text-primary">Information:</h2>
-          <hr light>
-          <!-- Settings -->
-          <div ng-if="settings">
-            <form ng-submit="updateInformation(settings)">
-              <div class="row form-group" ng-repeat="(key, setting) in settings">
-                <div class="col-md-2">
-                  <p style="margin-top: 10px;">{{ key | uppercase }}:</p>
-                </div>
-                <div class="col-md-4">
-                  <input type="text" ng-model="setting.label" class="form-control" required>
-                </div>
-                <div class="col-md-6">
-                  <input type="text" ng-model="setting.value" class="form-control" required>
-                </div>
-              </div>
-              <hr light>
-              <button class="btn btn-primary btn-block btn-lg"><i class="fa fa-save fa-fw"></i> Save Changes</button>
-            </form>
+    <!-- Authenticate -->
+    <div ng-if="currentSection === 'authenticate'">
+      <div class="infobox">
+        <!-- Title -->
+        <h2 class="text-primary">Authenticate:</h2>
+        <hr light>
+        <!-- Input -->
+        <form ng-submit="setAuthentication(form.code)" name="form">
+          <div class="form-group">
+            <input type="password" class="form-control input-lg" required
+              placeholder="Enter authentication code" ng-model="form.code">
           </div>
-        </div>
+        </form>
       </div>
-
-      <!-- Authenticate -->
-      <div ng-if="currentSection === 'authenticate'">
-        <div class="infobox">
-          <!-- Title -->
-          <h2 class="text-primary">Authenticate:</h2>
-          <hr light>
-          <!-- Input -->
-          <form ng-submit="setAuthentication(form.code)" name="form">
-            <div class="form-group">
-              <input type="password" class="form-control input-lg" required
-                placeholder="Enter authentication code" ng-model="form.code">
-            </div>
-          </form>
-        </div>
-      </div>
-
-      <br>
     </div>
   </div>
 </div>
