@@ -21,7 +21,7 @@
       </ul>
       <br>
       <!-- Messages table -->
-      <table class="table table-hover bg-white" ng-if="messages">
+      <table class="table table-hover bg-white" ng-if="messages.length">
         <thead>
           <tr>
             <th class="text-center">#</th>
@@ -42,7 +42,7 @@
         </tbody>
       </table>
       <!-- No message -->
-      <div ng-if="!messages">
+      <div ng-if="!messages.length">
         <h3 class="text-center text-muted">No message...</h3>
       </div>
     </div>
