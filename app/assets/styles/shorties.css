@@ -131,3 +131,10 @@
 .cur-no {
     pointer-events: none;
 }
+
+
+/* White space */
+
+.ws-pre {
+    white-space: pre-line;
+}
