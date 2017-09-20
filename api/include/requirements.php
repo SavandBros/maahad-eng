@@ -10,6 +10,7 @@ $headers = apache_request_headers();
 
 // Get $_POST content
 $_POST = json_decode(file_get_contents("php://input"), true);
+$_PUT  = json_decode(file_get_contents("php://input"), true);
 
 // Envirement variables
 $envs = parse_ini_file("env.ini", true);
