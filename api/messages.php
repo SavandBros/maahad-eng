@@ -8,7 +8,9 @@ if ($method === "GET") {
         return;
     }
 
-    response($db->select("SELECT * FROM messages ORDER BY id DESC LIMIT 200"));
+    $is_read = $db->quote_bool($_GET["is_read"]);
+
+    response($db->select("SELECT * FROM messages WHERE is_read=$is_read ORDER BY id DESC LIMIT 200"));
 
 } else if ($method === "POST") {
 
