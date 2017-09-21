@@ -1,7 +1,7 @@
 <!-- Inquiry -->
 <div class="container container-no-navbar s-pad-soft">
   <!-- Title -->
-  <h1 class="s-mar-top-no">Inquiry <b>{{ product }}</b></h1>
+  <h1 class="s-mar-top-no">Inquiry <b>{{ params.name }}</b></h1>
   <hr light>
   <!-- Form -->
   <form name="form" ng-submit="send(form)">
@@ -34,7 +34,7 @@
     <input ng-model="form.hidden" type="hidden">
     <!-- Send button -->
     <button class="btn btn-primary btn-lg btn-long pull-right btn-longer"
-      ng-disabled="form.loading || form.$invalid || form.success">
+      ng-disabled="form.success || form.loading || form.$invalid">
       <span ng-if="!form.success">Send</span>
       <span ng-if="form.success"><i class="fa fa-fw fa-check"></i></span>
     </button>
