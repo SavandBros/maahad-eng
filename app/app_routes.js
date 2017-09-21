@@ -28,7 +28,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
   })
 
   .state("app.inquiry", {
-    url: "/inquiry/:product/:productLink",
+    url: "/inquiry?name&link",
     controller: "InquiryController",
     templateUrl: "components/inquiry/inquiry.html",
     title: "Inquiry Now - ",
