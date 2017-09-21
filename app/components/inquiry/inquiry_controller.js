@@ -2,7 +2,7 @@
 
 app.controller("InquiryController", function (API, $scope, $stateParams, toaster) {
 
-  $scope.product = $stateParams.product;
+  $scope.params = $stateParams;
 
   $scope.send = function (form) {
     form.loading = true;
@@ -14,15 +14,14 @@ app.controller("InquiryController", function (API, $scope, $stateParams, toaster
       number: form.number || "",
       email: form.email,
       message: form.message,
-      product: $scope.product,
-      product_link: $stateParams.productLink,
+      product_name: $scope.params.name,
+      product_link:$scope.params.link,
       hidden: form.hidden
     };
 
-    console.log(payload);
-
     API.post("messages", payload, {}, function () {
       form.loading = false;
+      form.success = true;
       toaster.success("Thank you", "We will contact you soon!");
     }, function () {
       form.loading = false;
