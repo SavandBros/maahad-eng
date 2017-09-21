@@ -28,6 +28,7 @@
             <th>Email</th>
             <th>Name</th>
             <th>Number</th>
+            <th>Product</th>
             <th>Message</th>
             <th>Action</th>
           </tr>
@@ -38,7 +39,8 @@
             <td><a ng-href="mailto:{{ message.email }}">{{ message.email }}</a></td>
             <td>{{ message.name }}</td>
             <td><a ng-href="telto:{{ message.number }}">{{ message.number }}</a></td>
-            <td>{{ message.message | limitTo:30 }}...</td>
+            <td><a ng-href="{{ message.product_link }}" target="_blank">{{ message.product_name }}</a></td>
+            <td>{{ message.message | limitTo:50 }}...</td>
             <td>
               <div class="btn-group">
                 <button class="btn btn-xs btn-default" title="Mark as Read"
