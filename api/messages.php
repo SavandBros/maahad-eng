@@ -18,14 +18,16 @@ if ($method === "GET") {
         return;
     }
 
-    if (require_params(["email", "message"], $_POST)) {
+    if (require_params(["email", "message", "product_name", "product_link"], $_POST)) {
 
         $name = $db->quote($_POST["name"]);
         $number = $db->quote($_POST["number"]);
         $email = $db->quote($_POST["email"]);
         $message = $db->quote($_POST["message"]);
+        $product_name = $db->quote($_POST["product_name"]);
+        $product_link = $db->quote($_POST["product_link"]);
 
-        $db->query("INSERT INTO messages (name, number, email, message) VALUES ($name, $number, $email, $message)");
+        $db->query("INSERT INTO messages (name, number, email, message, product_name, product_link) VALUES ($name, $number, $email, $message, $product_name, $product_link)");
 
         $code = $db->affected() ? 201 : 400;
         response($db->affected(), $code);
