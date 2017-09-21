@@ -12,7 +12,10 @@ app.controller("ContactController", function (API, $scope, toaster) {
       number: form.number || "",
       email: form.email,
       message: form.message,
-      hidden: form.hidden
+      hidden: form.hidden,
+      // Required fields
+      product_name: "",
+      product_link: ""
     };
 
     API.post("messages", payload, {}, function () {
