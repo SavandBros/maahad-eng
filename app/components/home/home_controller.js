@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("HomeController", function (API, Product, $scope) {
+app.controller("HomeController", function (API, Product, $scope, $timeout) {
 
   function constructor() {
     /**
@@ -20,7 +20,9 @@ app.controller("HomeController", function (API, Product, $scope) {
     /**
      * @desc Activate bootstrap carousel
      */
-    angular.element(".carousel").carousel({ interval: 3000 });
+    $timeout(function () {
+      angular.element(".carousel").carousel({ interval: 3000 });
+    });
   }
 
   constructor();
