@@ -29,7 +29,11 @@ app.run(function ($rootScope, $anchorScroll) {
      */
     shop: "https://shop.almaahadeng.com",
     /**
-     * @type {string|null}
+     * @type {String}
+     */
+    news: "https://news.almaahadeng.com",
+    /**
+     * @type {string}
      */
     title: ""
   };
