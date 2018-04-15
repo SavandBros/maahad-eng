@@ -1,6 +1,4 @@
 <?php
-// Header
-header("Content-Type: application/json");
 
 // Request method (GET, POST, etc...)
 $method = $_SERVER["REQUEST_METHOD"];
@@ -23,12 +21,20 @@ if ($_SERVER["REMOTE_ADDR"] === "127.0.0.1") {
 
 // Load requirements
 require "connection.php";
+require "amir.php";
 
 // Database
 $db = new Db();
 
-// Amir class
-require "amir.php";
+// Header
+header("Content-Type: application/json");
+
+// No CORS for localhost
+if (!$env["prod"]) {
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS");
+    header("Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token, Authorization");
+}
 
 /**
 * Prints the API data with status code
