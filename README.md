@@ -2,7 +2,7 @@
 
 Website for [AlMaahadEng.com](https://almaahadeng.com) powered by [Kloud51.com](https://Kloud51.com).
 
-## Techlonogy
+## Technology
 
 AngularJS for front-end and PHP for backend API.
 
