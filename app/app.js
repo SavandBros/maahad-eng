@@ -31,7 +31,7 @@ app.run(function ($rootScope, $anchorScroll) {
     /**
      * @type {String}
      */
-    news: "https://news.almaahadeng.com",
+    news: "http://news.almaahadeng.com",
     /**
      * @type {string}
      */
