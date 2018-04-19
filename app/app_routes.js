@@ -22,7 +22,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
   .state("app.service", {
     url: "/services",
-    controller: "serviceController",
+    controller: "ServiceController",
     templateUrl: "components/service/service.html",
     title: "Services - "
   })
