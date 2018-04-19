@@ -20,6 +20,13 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     title: "Contact Us - "
   })
 
+  .state("app.service", {
+    url: "/services",
+    controller: "serviceController",
+    templateUrl: "components/service/service.html",
+    title: "Services - "
+  })
+
   .state("app.admin", {
     url: "/admin",
     controller: "AdminController",
