@@ -25,11 +25,11 @@ app.run(function ($rootScope, $anchorScroll) {
      */
     date: new Date(),
     /**
-     * @type {String}
+     * @type {string}
      */
     shop: "https://shop.almaahadeng.com",
     /**
-     * @type {String}
+     * @type {string}
      */
     news: "http://news.almaahadeng.com",
     /**
