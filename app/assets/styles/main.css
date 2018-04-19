@@ -67,6 +67,10 @@ hr[devider] {
     background: #fff;
 }
 
+.navbar-brand img {
+    margin-top: -5px;
+}
+
 @media (min-width: 768px) {
     body {
         margin-top: 70px;
