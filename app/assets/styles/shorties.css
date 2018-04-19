@@ -138,3 +138,10 @@
 .ws-pre {
     white-space: pre-line;
 }
+
+
+/* Displays */
+
+.dis-ib {
+    display: inline-block;
+}
