@@ -337,6 +337,11 @@ img.product {
     margin: 10px 0;
 }
 
+.logo-big {
+    border-radius: 5px;
+    border: 10px solid #ffffff52;
+}
+
 
 /* Infobox */
 
