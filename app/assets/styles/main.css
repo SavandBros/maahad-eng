@@ -157,6 +157,10 @@ hr[devider] {
     background-image: url("../images/construction.jpg");
 }
 
+.bg-cleaning {
+    background-image: url("../images/cleaning.jpg");
+}
+
 .bg-aboutus {
     background-image: url("../images/aboutus.jpg");
 }
