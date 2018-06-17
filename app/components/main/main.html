@@ -44,5 +44,44 @@
   </div>
 </nav>
 
+<!-- Contact us -->
+<div id="contact-us-panel" class="panel panel-primary hidden-xs hidden-sm" ng-if="!state.includes('app.contact')">
+  <!-- Header -->
+  <div class="panel-heading" ng-click="showContactPanel = !showContactPanel">
+    <h4 class="s-mar-0"><i class="fa fa-fw fa-comment"></i> Contact Us</h4>
+  </div>
+  <!-- Form -->
+  <form class="panel-body" uib-collapse="!showContactPanel" name="form" ng-submit="contact(form)">
+    <!-- Name -->
+    <div class="form-group">
+      <input type="text" class="form-control" minlength="3"
+        placeholder="Name (optional)" ng-model="form.name">
+    </div>
+    <!-- Phone number -->
+    <div class="form-group">
+      <input type="text" class="form-control" minlength="6"
+        placeholder="Phone numer (optional)" ng-model="form.number">
+    </div>
+    <!-- Email -->
+    <div class="form-group">
+      <input type="email" class="form-control"
+        placeholder="Email" ng-model="form.email" required>
+    </div>
+    <!-- Message -->
+    <div class="form-group">
+      <textarea class="form-control" placeholder="Message"
+        ng-model="form.message" rows="8" required minlength="10">
+      </textarea>
+    </div>
+    <!-- Hidden input -->
+    <input ng-model="form.hidden" type="hidden">
+    <!-- Send button -->
+    <button class="btn btn-primary" ng-disabled="form.loading || form.$invalid || form.success">
+      <span ng-if="!form.success"><i class="fa fa-fw fa-send"></i> SEND</span>
+      <span ng-if="form.success"><i class="fa fa-fw fa-check"></i></span>
+    </button>
+  </form>
+</div>
+
 <!-- Toaster -->
 <toaster-container toaster-options="{'position-class': 'toast-bottom-left'}"></toaster-container>
