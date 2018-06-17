@@ -437,3 +437,14 @@ img.product {
 .footer a:hover {
     color: #fff;
 }
+
+
+/* Contact us panel */
+
+#contact-us-panel {
+    position: fixed;
+    width: 300px;
+    right: 20px;
+    bottom: -25px;
+    z-index: 1;
+}
