@@ -1,29 +1,9 @@
 "use strict";
 
-app.controller("ContactController", function (API, $scope, toaster) {
+app.controller("ContactController", function ($scope, $rootScope) {
 
-  $scope.send = function (form) {
-    form.loading = true;
-    form.error = false;
-    form.success = false;
-
-    var payload = {
-      name: form.name || "",
-      number: form.number || "",
-      email: form.email,
-      message: form.message,
-      hidden: form.hidden,
-      // Required fields
-      product_name: "",
-      product_link: ""
-    };
-
-    API.post("messages", payload, {}, function () {
-      form.loading = false;
-      toaster.success("Thank you", "We will contact you soon!");
-    }, function () {
-      form.loading = false;
-      toaster.error("Error", "Something went wrong, please try again.");
-    });
+  $scope.contact = function (form) {
+    console.log("Broadcasting from contact...");
+    $rootScope.$broadcast("maahadEng.ContactController:contact", form);
   };
 });
