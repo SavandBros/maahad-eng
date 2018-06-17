@@ -1,6 +1,7 @@
 "use strict";
 
 var app = angular.module("maahadEng", [
+  "ngAnimate",
   "ngMap",
   "ui.router",
   "ui.bootstrap",
