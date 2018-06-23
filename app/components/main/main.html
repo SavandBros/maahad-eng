@@ -45,7 +45,8 @@
 </nav>
 
 <!-- Contact us -->
-<div id="contact-us-panel" class="panel panel-primary hidden-xs hidden-sm" ng-if="!state.includes('app.contact')">
+<div id="contact-us-panel" class="panel panel-primary hidden-xs hidden-sm"
+  ng-if="!state.includes('app.contact') && !state.includes('app.inquiry')">
   <!-- Header -->
   <div class="panel-heading" ng-click="showContactPanel = !showContactPanel">
     <h4 class="s-mar-0"><i class="fa fa-fw fa-comment"></i> Contact Us</h4>
