@@ -36,6 +36,10 @@ app.run(function ($rootScope, $anchorScroll) {
     /**
      * @type {string}
      */
+    gallery: "http://gallery.almaahadeng.com",
+    /**
+     * @type {string}
+     */
     title: ""
   };
 
