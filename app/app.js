@@ -28,15 +28,15 @@ app.run(function ($rootScope, $anchorScroll) {
     /**
      * @type {string}
      */
-    shop: "https://shop.almaahadeng.com",
+    shop: "https://almaahadeng.com",
     /**
      * @type {string}
      */
-    news: "http://news.almaahadeng.com",
+    news: "https://news.almaahadeng.com",
     /**
      * @type {string}
      */
-    gallery: "http://gallery.almaahadeng.com",
+    gallery: "https://almaahadeng-gallery.gonevis.com/",
     /**
      * @type {string}
      */
